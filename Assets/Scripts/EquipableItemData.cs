@@ -9,6 +9,9 @@ public class EquipableItemData : ItemData
     public EquipablePart part;
     public bool isEquipped;
 
+    [Header("StatModifier")]
+    public CharacterStat[] statModifiers;
+
     EquipableItemData() : base(ItemType.Equipable) { }
 
 }

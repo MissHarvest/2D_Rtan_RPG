@@ -13,13 +13,22 @@ public class DetailUIController : MonoBehaviour
     private void Awake()
     {
         statPanel.SetActive(true);
-        inventoryPanel.SetActive(false);
+        inventoryPanel.SetActive(true);
+
+        statButton.onClick.AddListener(OnClickStatButton);
+        inventoryButton.onClick.AddListener(OnClickInventoryButton);
+
+        GameManager.instance.OnGameStart += Init;
     }
 
     private void Start()
+    {   
+        
+    }
+
+    private void Init()
     {
-        statButton.onClick.AddListener(OnClickStatButton);
-        inventoryButton.onClick.AddListener(OnClickInventoryButton);
+        inventoryPanel.SetActive(false);
     }
 
     private void OnClickStatButton()
